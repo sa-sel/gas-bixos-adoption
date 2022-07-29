@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "transpile": "babel src --out-dir .build --extensions \"\" --copy-files",
+    "rollup": "rollup --config ./.rollup.js",
+    "build": "npm run transpile && npm run rollup",
+    "push": "./push.sh"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/plugin-transform-runtime": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-typescript": "^7.18.6",
+    "@google/clasp": "^2.4.1",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.4",
+    "@types/google-apps-script": "^1.0.53",
+    "rollup": "^2.77.2"
+  }
+}

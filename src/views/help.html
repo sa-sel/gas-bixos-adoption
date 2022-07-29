@@ -1,0 +1,142 @@
+<!-- videoURL = 'https://drive.google.com/file/d/1Ul00W7vEfspgapscQSLMgBTOyLPl1C9g/view?usp=sharing' -->
+<!-- dirURL = 'https://drive.google.com/drive/folders/15v_QaXqVg1Sp2394AmnuItqQLax1JKlV?usp=sharing' -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+
+    <style>
+      html, body {
+        background-color: #004561;
+      }
+
+      a, a:link, a:visited {
+        display: inline-block;
+        color: inherit;
+      }
+
+      a:hover {
+        color: #64c1c7;
+        transition: 0.25s;
+      }
+
+      a:active {
+        color: #0A2D61;
+      }
+
+      p, span, li, h1, h2, h3, h4, h5, h6 {
+        color: white;
+      }
+
+      li {
+        margin: 0.8% 0 0.8% 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      Oi! Tudo bem?<br><br>
+      Aqui é o Flip, da <s>Eletrônica 018</s> BCC 021.<br>
+      Eu fiz a planilha com muito carinho e espero que ela lhe seja útil :)
+    </p>
+    <br>
+
+    <span>O que é cada página da planilha?</span>
+    <ol>
+      <li>
+        <span><strong><u>"Buscar"</u></strong> - serve apenas para procurar os dados de um bixo e de seu respectivo padrinho/madrinha. Você vai colocar o nome do bixo na célula "Nome" (D6) e os dados vão aparecer automaticamente.</span>
+
+        <ul>
+          <li>Isso é útil para quem estiver moderando o grupo do Facebook - ao aprovar a entrada de um bixo no grupo, costuma-se enviar para ele uma mensagem com as informações do veterano que o adotou e, nesse caso, o jeito mais fácil de obtê-las é através dessa busca.</li>
+
+          <li>Basta apertar o botão "ENTROU NO GRUPO" e na planilha será marcado que aquele bixou entrou no grupo do Facebook. Ou seja, não é necessário buscar por esse bixo na "Lista dos Meliantes" e manualmente marcar o "Entrou no grupo?" como verdadeiro.</li>
+        </ul>
+      </li>
+
+      <li>
+        <span><strong><u>"Lista dos Meliantes"</u></strong> - é a planilha principal, em que você poderá ver todas as informações sobre os bixos cadastrados e já sorteados.</span>
+        <ul>
+          <li>O "Situação (Elétrica)" diz respeito a se o bixo vai ficar na Elétrica CAASO.</li>
+        </ul>
+      </li>
+
+      <li><strong><u>"Números"</u></strong> - serão mostrados números relacionados às quantidades dos diversos tipos de bixos veteranos. Não é necessário fazer nada, essa página será atualizada automaticamente.</li>
+
+      <li><strong><u>"Bixos Perdidos"</u></strong> - serão mostrados todos os bixos que ainda não entraram no grupo do Facebook. Não é necessário fazer nada, essa página será atualizada automaticamente.</li>
+
+      <li><strong><u>"DB - Bixos"</u></strong> - é aonde serão colocados os bixos que se deseja sortear para os veteranos. Por exemplo, quando sair uma chamada da Fuvest, você vai pegar os nomes e ênfases dos bixos, colocar lá e, no menu Scripts (lá em cima), apertar o botão "Sortear bixos".</li>
+
+      <li><strong><u>"DB - Veteranos"</u></strong> - é aonde você vai colocar os dados dos veteranos e vetearnos que se inscreveram na Adoção dos Bixos. É necessário incluir, pelo menos, nome, email e ênfase para que o script consiga rodar com sucesso. A coluna "Monobixo" diz respeito a se aquela pessoa optou por adotar <em>apenas um</em> bixo ou não.</li>
+
+      <li>
+        <span><strong><u>"Template do Email"</u></strong> - é aonde você vai colocar e visualizar o... bom, <em>o template do email</em> que será enviado para os padrinhos/madrinhas quando os bixos forem sorteados.</span>
+        <ul>
+          <li>Você deve escrever o corpo do email e pode escrever o título do email.</li>
+
+          <li>Para ver um <i>preview</i> de como vai ficar o email, basta apertar no botão "VISUALIZAR EMAIL".</li>
+
+          <li>Se você não escrever um título pro email, será usado o título padrão: "<strong>Adoção de Bixos da Elétrica 20XX</strong>"".
+
+          <li>Se você incluir a variável <em>$(nomeVeteran@)</em> no texto (tanto título quando corpo), quando os emails forem enviados ela será substituída pelo primeiro nome de cada veterano. Por exemplo, "Olá, $(nomeVeteran@)!" irá virar "Olá, Lucas!", no email enviado para o Lucas Viana.</li>
+
+          <li>É obrigatório incluir a variável <em>$(listarBixos)</em> no texto do corpo do email (ela não é válida no título). Quando os emails forem enviados ela será substituída pela lista dos bixos adotados por aquela pessoa. O formato é <em>&lt;li&gt;NOME_DO_BIXO (ÊNFASE_DO_BIXO)&lt;/li&gt;</em>, para cada bixo e, portanto é necessário que essa variável esteja inclusa dentro de uma lista. Por exemplo &lt;ol&gt;$(listarBixos)&lt;/ol&gt;, para uma lista ordenada (numerada), ou &lt;ul&gt;$(listarBixos)&lt;/ul&gt; para uma lista não ordenada (bulletpoints).</li>
+
+          <li>O corpo do email deve ser escrito formatado em HTML. Caso você não tenha familiaridade com a linguagem, recomendo usar <a href='https://wordtohtml.net/' target='_blank'>essa ferramenta</a>.</li>
+
+          <li>Os emails só serão enviado se a conta rodando o script for a <strong>sasel@eesc.usp.br</strong></li>
+
+          <li>
+            <span>Tenha em mente que, no final do texto, será inclusa a assinatura da SA-SEL:</span>
+            <h6>--<br>SA-SEL - Secretaria Acadêmica da Engenharia Elétrica<br>Departamento de Engenharia Elétrica e Computação<br>Escola de Engenharia de São Carlos</h6>
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <br><br>
+
+    <span>O que faz cada comando do menu "Scripts"?</span>
+    <ul>
+      <li>
+        <span><strong><u>"Sortear bixos"</u></strong> - é o comando principal, o script vai:</span>
+        <ol>
+          <li>Pegar todos os bixos da "DB - Bixos" e sortear entre os veteranos da "DB - Veteranos".</li>
+          <li>Incluir todos esses dados no final da "Lista dos Meliantes" e limpar a "DB - Bixos".</li>
+          <li>Enviar os emails para cada um dos veteranos que receberam bixos com os dados destes.</li>
+          <li>Pedir ao usuário o título da chamada que acabou de ser processada (ex: Primeira Chamada, Segunda Chamada)</li>
+          <li>Criar uma página na planilha da chamada que acabou de ser processada, com os bixos que acabaram de ser sorteados, para ser printada e divulgada no grupo do Facebook, incentivando as pessoas a caçarem os bixos. Ao fazer isso, ele vai <em>esconder</em> (não excluir) todas as páginas das chamas anteriores.</li>
+        </ol>
+      </li>
+
+      <li><strong><u>"DB Bixos - toda"</u></strong> - vai limpar todos os dados da página "DB Bixos".</li>
+
+      <li><strong><u>"DB Veteranos - toda"</u></strong> - vai limpar todos os dados da página "DB Veteranos".</li>
+
+      <li><strong><u>"Lista dos Meliantes - linhas vazias"</u></strong> - vai excluir todas as linhas vazias da página "Lista dos Meliantes".</li>
+
+      <li><strong><u>"Lista dos Meliantes - toda"</u></strong> - vai limpar todos os dados da página "Lista dos Meliantes".</li>
+    </ul>
+
+    <br><br>
+
+    <span>Alguns outros pontos importantes:</span>
+    <ul>
+      <li>Tenha muito cuidado ao editar a planilha, espcialmente células protegidas.</li>
+      <li>Não mude os nomes das páginas da planilha nem das células nomeadas, senão vai dar pau no script.</li>
+      <li>Nas páginas que já existem da planilha, não crie colunas à esquerda dentro das que já existem. É possível apenas criar colunas à direitas das que já existem, senão vai dar pau no script.</li>
+      <li>O ideal é não marcar a checkbox do "Entrou no grupo?" manualmente na "Lista dos Meliantes", mas sim através do botão na "Buscar".</li>
+      <li>Os emails para os padrinhos/madrinhas só serão enviado se a conta rodando o script for a <strong>sasel@eesc.usp.br</strong></li>
+    </ul>
+
+    <br><br>
+    <span>Deixo aí embaixo alguns links úteis (os vídeos estão um pouco defasados). Se tiver maiores dificuldades, vem de zap.</span>
+
+    <br>
+    <ul>
+      <li>Links dos vídeos ensinando a usar a planilha: <a href='https://drive.google.com/file/d/1xbozoG87nt4L1BKF27MdSooA2SHMsLXy/view?usp=sharing' target='_blank'>parte 1</a> e <a href='https://drive.google.com/file/d/12RGkne1w-YApW9qUBQPUJ2DEeNeyqdqv/view?usp=sharing' target='_blank'>parte 2</a></li>
+      <li><a href='https://drive.google.com/drive/folders/15v_QaXqVg1Sp2394AmnuItqQLax1JKlV?usp=sharing' target='_blank'>Link do drive com os vídeos do desenvolvimento da planilha</a></li>
+    </ul>
+  </body>
+</html>

@@ -3,6 +3,7 @@
     "transpile": "babel src --out-dir .build --extensions \"\" --copy-files",
     "rollup": "rollup --config ./.rollup.js",
     "build": "npm run transpile && npm run rollup",
+    "format": "eslint . --fix --quiet; prettier --write .", "lint": "eslint . && prettier --check",
     "push": "./push.sh"
   },
   "devDependencies": {

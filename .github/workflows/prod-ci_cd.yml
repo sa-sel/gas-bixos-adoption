@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -47,4 +47,6 @@ jobs:
       - name: Deploy to Google Sheets
         env:
           SCRIPT_ID: ${{ secrets.REFRESH_TOKEN }}
-        run: npm run push
+        run: |
+          npm ci
+          npm run push

@@ -1,5 +1,6 @@
 .clasp.json
 .eslintcache
+.env
 
 # compiled output
 /dist

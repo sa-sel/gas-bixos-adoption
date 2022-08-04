@@ -37,16 +37,27 @@ jobs:
         with:
           node-version: '16'
 
+      # - name: 📂 Login to Clasp
+      # uses: daikikatsuragawa/clasp-action@v1.1.0
+      # with:
+      #   accessToken: ${{ secrets.GAS_ACCESS_TOKEN }}
+      #   idToken: ${{ secrets.GAS_ID_TOKEN }}
+      #   refreshToken: ${{ secrets.GAS_REFRESH_TOKEN }}
+      #   clientId: ${{ secrets.GAS_CLIENT_ID }}
+      #   clientSecret: ${{ secrets.GAS_CLIENT_SECRET }}
+      #   scriptId: ${{ secrets.GAS_SCRIPT_ID }}
+      #   command: 'push'
+
       - name: 📂 Login to Clasp
         uses: namaggarwal/clasp-token-action@v0.0.1
         with:
-          client-id: ${{ secrets.CLIENT_ID }}
-          client-secret: ${{ secrets.CLIENT_SECRET }}
-          refresh-token: ${{ secrets.REFRESH_TOKEN }}
+          client-id: ${{ secrets.GAS_CLIENT_ID }}
+          client-secret: ${{ secrets.GAS_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.GAS_REFRESH_TOKEN }}
 
       - name: Deploy to Google Sheets
         env:
-          SCRIPT_ID: ${{ secrets.REFRESH_TOKEN }}
+          SCRIPT_ID: ${{ secrets.GAS_SCRIPT_ID }}
         run: |
           npm ci
           npm run push

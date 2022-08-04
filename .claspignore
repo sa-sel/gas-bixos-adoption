@@ -8,6 +8,8 @@
 !.build/**/*
 .build/**/*.{ts,js}
 !.build/scripts/index.js
+!views/**/*
+!scripts/index.js
 
 # ignore even valid files if in…
 .git/**

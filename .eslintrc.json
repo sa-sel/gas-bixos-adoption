@@ -8,7 +8,7 @@
   "plugins": ["@typescript-eslint/eslint-plugin"],
   "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "env": {
-    "node": true,
+    "node": true
   },
   "rules": {
     "@typescript-eslint/comma-dangle": ["warn", "always-multiline"],

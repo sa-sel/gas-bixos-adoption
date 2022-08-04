@@ -1,9 +1,11 @@
 {
   "scripts": {
+    "prepare": "husky install",
     "transpile": "babel src --out-dir .build --extensions \"\" --copy-files",
     "rollup": "rollup --config ./.rollup.js",
     "build": "npm run transpile && npm run rollup",
-    "format": "eslint . --fix --quiet; prettier --write .", "lint": "eslint . && prettier --check",
+    "format": "eslint . --fix --quiet; prettier --write .",
+    "lint": "eslint . && prettier --check",
     "push": "./push.sh"
   },
   "devDependencies": {
@@ -17,6 +19,17 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.4",
     "@types/google-apps-script": "^1.0.53",
-    "rollup": "^2.77.2"
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^8.0.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.6.2",
+    "rollup": "^2.77.2",
+    "typescript": "^4.3.5"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --cache --fix",
+    "*.{js,css,md,scss,ts,html,yaml,yml,json}": "prettier --write --cache"
   }
 }

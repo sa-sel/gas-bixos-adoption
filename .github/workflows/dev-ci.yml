@@ -1,4 +1,4 @@
-name: Devlopment Environment CI/CD
+name: Devlopment Environment CI
 
 on:
   push:
